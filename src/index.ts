@@ -23,8 +23,6 @@ let customResolvers = requireAll(`${__dirname}/graphql/resolvers`);
 customResolvers = Object.values(customResolvers).map(
   val => Object.values(val)[0]
 );
-console.log(customResolvers);
-
 // Start Server Function
 (async () => {
   logHelper();
