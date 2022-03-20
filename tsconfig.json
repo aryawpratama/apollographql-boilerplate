@@ -15,7 +15,6 @@
       "strictNullChecks": true,
       "alwaysStrict": true,
       "esModuleInterop": true,
-      "rootDir": "./",
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
       "sourceMap": true,

@@ -13,7 +13,7 @@ import { ActionRespond } from '@object/responds.object';
 import { CreateUser, UpdateProfile, UpdateUser } from '@params/user.param';
 import { Role } from '@enities/role.entity';
 import { IAuthContext } from '@context/auth.context';
-import { GraphQLError } from 'graphql';
+import { ValidationError } from 'apollo-server-errors';
 
 @Resolver()
 export class UserResolver {
@@ -70,9 +70,9 @@ export class UserResolver {
   ): Promise<ActionRespond> {
     const { id } = data;
     const target = await User.findOne({ where: { id } });
-    if (!target) throw new GraphQLError('User not found');
+    if (!target) throw new ValidationError('User not found');
     if (target.role.id < user.role.id) {
-      throw new GraphQLError('Unable to update higher role');
+      throw new ValidationError('Unable to update higher role');
     }
     await User.update(target, { ...data });
 
@@ -86,9 +86,9 @@ export class UserResolver {
     @Ctx() { payload: { user } }: IAuthContext
   ): Promise<ActionRespond> {
     const target = await User.findOne({ where: { id }, relations: ['role'] });
-    if (!target) throw new GraphQLError('User not found');
+    if (!target) throw new ValidationError('User not found');
     if (target.role.id < user.role.id) {
-      throw new GraphQLError('Unable to delete higher role');
+      throw new ValidationError('Unable to delete higher role');
     }
     await User.softRemove(target);
 
