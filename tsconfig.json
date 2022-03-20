@@ -1,0 +1,19 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "ES5",
+         "ES6",
+         "ES2018",
+         "ESNext.AsyncIterable"
+      ],
+      "target": "ES6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "strict": true,
+      "strictNullChecks": true,
+      "alwaysStrict": true,
+      "esModuleInterop": true,
+    }
+}
