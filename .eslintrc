@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb/base",
+    "airbnb-typescript/base"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": ["tsconfig.json"]
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "newline-before-return":"error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/dot-notation":"off",
+    "import/prefer-default-export":"off",
+    "max-len":"off",
+    "no-console":"off",
+    "import/no-dynamic-require":"off",
+    "global-require":"off",
+    "no-useless-escape":"off",
+    "class-methods-use-this":"off",
+    "max-classes-per-file":"off",
+    "import/no-extraneous-dependencies":"off",
+    "no-param-reassign":"off",
+    "@typescript-eslint/indent":"off",
+    "@typescript-eslint/comma-dangle":"off",
+    "spaced-comment":"error",
+    "implicit-arrow-linebreak":"off",
+    "arrow-parens":"off",
+    "nonblock-statement-body-position":"off",
+    "curly":"off"
+  }
+}

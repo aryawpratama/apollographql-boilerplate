@@ -1,0 +1,36 @@
+{
+   "compilerOptions": {
+      "lib": [
+         "ES5",
+         "ES6",
+         "ES2018",
+         "ESNext.AsyncIterable"
+      ],
+      "target": "ES6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "./dist",
+      "baseUrl": "./",
+      "strict": true,
+      "strictNullChecks": true,
+      "alwaysStrict": true,
+      "esModuleInterop": true,
+      "rootDir": "./",
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+      "paths": {
+      "@declaration/*": ["src/declaration/*"],
+      "@context/*": ["src/context/*"],
+      "@enities/*": ["src/database/entities/*"],
+      "@migrations/*": ["src/database/migrations/*"],
+      "@factories/*": ["src/database/factories/*"],
+      "@seeds/*": ["src/database/seeds/*"],
+      "@guards/*": ["src/graphql/guards/*"],
+      "@resolvers/*": ["src/graphql/resolvers/*"],
+      "@object/*": ["src/graphql/gqltypes/objects/*"],
+      "@params/*": ["src/graphql/gqltypes/params/*"],
+      "@helpers/*": ["src/helpers/*"],
+      }
+   }
+}
