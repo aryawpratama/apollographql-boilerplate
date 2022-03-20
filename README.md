@@ -16,11 +16,11 @@ Made with :two_hearts: by [Arya W Pratama](https://github.com/aryawpratama)
 **Powered by**
 </div>
 <div align="center">
-<a href="https://www.apollographql.com/" title="MySQL"><img src="icons/apollo.png" /></a>
-<a href="https://typegraphql.com/" title="MySQL"><img src="icons/typegraphql.png" /></a>
-<a href="https://typeorm.io/" title="MySQL"><img src="icons/typeorm.png" /></a>
-<a href="https://nodejs.org/" title="MySQL"><img src="icons/nodejs.png" /></a>
-<a href="https://expressjs.com/" title="MySQL"><img src="icons/express.png" /></a>
+<a href="https://www.apollographql.com/" title="Apollo"><img src="icons/apollo.png" /></a>
+<a href="https://typegraphql.com/" title="TypeGraphQL"><img src="icons/typegraphql.png" /></a>
+<a href="https://typeorm.io/" title="TypeORM"><img src="icons/typeorm.png" /></a>
+<a href="https://nodejs.org/" title="NodeJS"><img src="icons/nodejs.png" /></a>
+<a href="https://expressjs.com/" title="Express"><img src="icons/express.png" /></a>
 <a href="https://www.typescriptlang.org/" title="TypeScript"><img src="icons/typescript.png" /></a>
 <a href="https://www.mysql.com/" title="MySQL"><img src="icons/mysql.png" /></a>
 </div>
