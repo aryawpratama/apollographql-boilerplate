@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import { createConnection } from 'typeorm';
 import express from 'express';
 import http from 'http';
-import { buildSchema, NonEmptyArray, PubSubEngine } from 'type-graphql';
 import { ApolloServer } from 'apollo-server-express';
 import {
   ApolloServerPluginLandingPageDisabled,
@@ -11,18 +10,12 @@ import {
 import colors from 'colors';
 import ws from 'ws';
 import { useServer } from 'graphql-ws/lib/use/ws';
-import { requireAll } from '@helpers/require.helper';
-import { createPubsub, getPubSub } from '@helpers/pubsub.helper';
-import { authGuard } from '@guards/auth.guard';
+import { createPubsub } from '@helpers/pubsub.helper';
 import { socketGuard } from '@guards/socket.guard';
 import { ISocketAuth } from '@context/socket.context';
 import { logHelper } from '@helpers/log.helper';
 import { Context } from 'graphql-ws';
-// Import resolvers
-let customResolvers = requireAll(`${__dirname}/graphql/resolvers`);
-customResolvers = Object.values(customResolvers).map(
-  val => Object.values(val)[0]
-);
+import { schemaHelper } from '@helpers/schema.helper';
 // Start Server Function
 (async () => {
   logHelper();
@@ -43,11 +36,7 @@ customResolvers = Object.values(customResolvers).map(
   const httpServer = http.createServer(app);
   app.use(express.json());
   // Apollo Schema Generator
-  const schema = await buildSchema({
-    resolvers: customResolvers as NonEmptyArray<string>,
-    authChecker: authGuard,
-    pubSub: getPubSub() as PubSubEngine,
-  });
+  const schema = await schemaHelper();
   // Apollo Server Instance
   const apolloServer = new ApolloServer({
     schema,

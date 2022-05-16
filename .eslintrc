@@ -38,6 +38,7 @@
     "implicit-arrow-linebreak":"off",
     "arrow-parens":"off",
     "nonblock-statement-body-position":"off",
-    "curly":"off"
+    "curly":"off",
+    "linebreak-style":"off"
   }
 }

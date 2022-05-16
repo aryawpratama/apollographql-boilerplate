@@ -8,12 +8,7 @@ const deleteFolderRecursive = (Path: string) => {
     fs.readdirSync(Path).forEach((file) => {
       if (!exception.includes(file)) {
         const curPath = path.join(Path, file);
-        if (fs.lstatSync(curPath).isDirectory()) {
-          // recurse
-          deleteFolderRecursive(curPath);
-        } else {
-          fs.unlinkSync(curPath);
-        }
+        fs.rmSync(curPath, { recursive: true });
       }
     });
   }
